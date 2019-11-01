@@ -8,12 +8,43 @@
 */
 
 /* HTML:
-  <div class="carousel">
-    <div class="left-button"> < </div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
-    <div class="right-button"> > </div>
-  </div>
+    <div class="carousel">
+        <div class="left-button"> < </div>
+        <img src="./assets/carousel/mountains.jpeg" />
+        <img src="./assets/carousel/computer.jpeg" />
+        <img src="./assets/carousel/trees.jpeg" />
+        <img src="./assets/carousel/turntable.jpeg" />
+        <div class="right-button"> > </div>
+    </div>
 */
+
+function createCarousel() {
+    const carousel = document.createElement('div');
+        const leftButton = document.createElement('div');
+        const image1 = document.createElement('img');
+        const image2 = document.createElement('img');
+        const image3 = document.createElement('img');
+        const image4 = document.createElement('img');
+        const rightButton = document.createElement('div');
+
+    carousel.classList.add('carousel');
+    leftButton.classList.add('left-button');
+    rightButton.classList.add('right-button');
+
+    leftButton.textContent = '<';
+    rightButton.textContent = '>';
+    image1.src = './assets/carousel/mountains.jpeg';
+    image2.src = './assets/carousel/computer.jpeg';
+    image3.src = './assets/carousel/trees.jpeg';
+    image4.src = './assets/carousel/turntable.jpeg';
+
+    carousel.append(leftButton, image1, image2, image3, image4, rightButton);
+
+    return carousel;
+    
+}
+
+const carouselContainer = document.querySelector('.carousel-container');
+
+// carouselContainer.appendChild(createCarousel());
+console.log(createCarousel());

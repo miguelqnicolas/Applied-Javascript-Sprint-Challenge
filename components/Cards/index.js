@@ -51,6 +51,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             cardsContainer.append(createCard(iteration));
             // console.log(iteration);
             // i spent so much time debugging and it was because i forgot to return
+            // i did not need to loop over an object
         });
     })
     .catch(error => {
