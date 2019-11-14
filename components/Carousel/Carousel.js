@@ -46,5 +46,5 @@ function createCarousel() {
 
 const carouselContainer = document.querySelector('.carousel-container');
 
-// carouselContainer.appendChild(createCarousel());
-console.log(createCarousel());
+carouselContainer.appendChild(createCarousel());
+// console.log(createCarousel());
