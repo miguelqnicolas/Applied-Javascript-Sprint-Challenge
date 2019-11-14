@@ -46,13 +46,11 @@ const cardsContainer = document.querySelector('.cards-container');
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        // console.log(response.data.articles.javascript[0].headline);
-        response.data.articles.javascript.forEach(function(iteration) {
-            cardsContainer.append(createCard(iteration));
-            // console.log(iteration);
-            // i spent so much time debugging and it was because i forgot to return
-            // i did not need to loop over an object
-        });
+        for (let propertyIteration in response.data.articles) {
+            response.data.articles[propertyIteration].forEach(function(iteration) {
+                cardsContainer.append(createCard(iteration));
+            });
+        }
     })
     .catch(error => {
         console.log('There was an error:', error);
